@@ -1,7 +1,10 @@
-
-'use strict';
+/**
+ * @author Luuxis
+ * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ */
 const { ipcRenderer } = require('electron');
-import { config } from './utils.js';
+const os = require('os');
+import { config, database } from './utils.js';
 
 let dev = process.env.NODE_ENV === 'dev';
 
@@ -12,16 +15,24 @@ class Splash {
         this.splashMessage = document.querySelector(".splash-message");
         this.splashAuthor = document.querySelector(".splash-author");
         this.message = document.querySelector(".message");
-        this.progress = document.querySelector("progress");
-        document.addEventListener('DOMContentLoaded', () => this.startAnimation());
+        this.progress = document.querySelector(".progress");
+        document.addEventListener('DOMContentLoaded', async () => {
+            let databaseLauncher = new database();
+            let configClient = await databaseLauncher.readData('configClient');
+            let theme = configClient?.launcher_config?.theme || "auto"
+            let isDarkTheme = await ipcRenderer.invoke('is-dark-theme', theme).then(res => res)
+            document.body.className = isDarkTheme ? 'dark global' : 'light global';
+            if (process.platform == 'win32') ipcRenderer.send('update-window-progress-load')
+            this.startAnimation()
+        });
     }
 
     async startAnimation() {
         let splashes = [
-            { "message": "Bienvenue !", "author": "Viking" },
-            { "message": "Bienvenue !", "author": "Viking" },
-            { "message": "Bienvenue !", "author": "Viking" }
-        ]
+            { "message": "Je... vie...", "author": "Luuxis" },
+            { "message": "Salut je suis du code.", "author": "Luuxis" },
+            { "message": "Linux n'est pas un os, mais un kernel.", "author": "Luuxis" }
+        ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
         this.splashAuthor.children[0].textContent = "@" + splash.author;
@@ -42,24 +53,27 @@ class Splash {
         if (dev) return this.startLauncher();
         this.setStatus(`Recherche de mise à jour...`);
 
-        ipcRenderer.invoke('update-app').then(err => {
-            if (err.error) {
-                let error = err.message;
-                this.shutdown(`Erreur lors de la recherche de mise à jour :<br>${error}`);
-            }
-        })
+        ipcRenderer.invoke('update-app').then().catch(err => {
+            return this.shutdown(`erreur lors de la recherche de mise à jour :<br>${err.message}`);
+        });
 
         ipcRenderer.on('updateAvailable', () => {
             this.setStatus(`Mise à jour disponible !`);
-            this.toggleProgress();
             ipcRenderer.send('start-update');
         })
 
+        ipcRenderer.on('error', (event, err) => {
+            if (err) return this.shutdown(`${err.message}`);
+        })
+
         ipcRenderer.on('download-progress', (event, progress) => {
+            this.toggleProgress();
+            ipcRenderer.send('update-window-progress', { progress: progress.transferred, size: progress.total })
             this.setProgress(progress.transferred, progress.total);
         })
 
         ipcRenderer.on('update-not-available', () => {
+            console.error("Mise à jour non disponible");
             this.maintenanceCheck();
         })
     }
@@ -81,8 +95,8 @@ class Splash {
     }
 
     shutdown(text) {
-        this.setStatus(`${text}<br>Arrêt dans 10s`);
-        let i = 10;
+        this.setStatus(`${text}<br>Arrêt dans 5s`);
+        let i = 4;
         setInterval(() => {
             this.setStatus(`${text}<br>Arrêt dans ${i--}s`);
             if (i < 0) ipcRenderer.send('update-window-close');
