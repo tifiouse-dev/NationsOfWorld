@@ -1,5 +1,5 @@
 /**
- * @author Luuxis
+ * @author Tifiouse
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
 const { ipcRenderer } = require('electron');
@@ -29,9 +29,9 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Je... vie...", "author": "Luuxis" },
-            { "message": "Salut je suis du code.", "author": "Luuxis" },
-            { "message": "Linux n'est pas un os, mais un kernel.", "author": "Luuxis" }
+            { "message": "Bienvenue !", "author": "VikingCraft" },
+            { "message": "Bienvenue !", "author": "VikingCraft" },
+            { "message": "Bienvenue !", "author": "VikingCraft" }
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;

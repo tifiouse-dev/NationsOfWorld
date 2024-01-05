@@ -1,13 +1,13 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
-    "version": "2.0.0",
-    "description": "Launcher Mincraft pour le serveur Selvania",
+    "name": "VikingCraft-Launcher",
+    "preductname": "VikingCraft Launcher",
+    "version": "2.0.1",
+    "description": "Launcher Mincraft pour le serveur VikingCraft",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Inc.",
-        "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "name": "VikingCraft, Inc.",
+        "email": "contact@vikingcraft.fr",
+        "url": "https://github.com/"
     },
     "url": "https://files-vikingcraftmc.athena-h.fr/",
     "scripts": {
