@@ -1,4 +1,4 @@
-# module du helios launcher
+# module du viking launcher
 name: Launcher Build
 on:
   push:

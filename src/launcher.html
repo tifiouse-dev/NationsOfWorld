@@ -1,10 +1,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
         <link rel="stylesheet" href="assets/css/launcher.css">
     </head>
-    <body class="dfvf">
+    <body class="hide">
         <div class="dragbar"></div>
         <div class="frame">
             <div id="minimize" class="button-frame icon-minimize"></div>
@@ -12,16 +11,30 @@
             <div id="close" class="button-frame icon-close"></div>
         </div>
 
-        <div class="popup">
-            <div class="popup-tab">
-                <div class="popup-title"></div>
-                <div class="popup-content"></div>
-                <div class="popup-options">
-                    <button class="popup-button">OK</button>
+        <div class="preload-content">
+            <div class="preload-progress">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
+            <div class="preload-title">Chargement en cours...</div>
         </div>
+
         <div class="panels"></div>
         <script src="assets/js/launcher.js" type="module"></script>
     </body>
+    <script>
+        // Function to disable F12 key
+        function disableF12(e) {
+            if (e.keyCode === 123) { // F12 Key code is 123
+                e.preventDefault();
+            }
+        }
+
+        // Attach the event listener to the 'keydown' event
+        document.addEventListener('keydown', disableF12);
+    </script>
 </html>
