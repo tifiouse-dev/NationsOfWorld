@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const UpdateWindow = require("./assets/js/windows/updateWindow.js");
 const MainWindow = require("./assets/js/windows/mainWindow.js");
-const appUpdateConfig = "\nowner: '903623766825893948'\nrepo: '1113541071436263557'\nprovider: github\nreleaseType: release\nupdaterCacheDirName: Viking-launcher-updater\n";
+const appUpdateConfig = "\nowner: 'tifiouse-devs'\nrepo: 'VikingCraft-Launcher'\nprovider: github\nreleaseType: release\nupdaterCacheDirName: Viking-launcher-updater\n";
 
 
 let data

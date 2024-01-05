@@ -4,7 +4,7 @@ const fs = require("fs");
 const png2icons = require('png2icons');
 const Jimp = require('jimp');
 const { preductname } = require('./package.json')
-const appUpdateConfig = "\nowner: '903623766825893948'\nrepo: '1113541071436263557'\nprovider: github\nreleaseType: release\nupdaterCacheDirName: Viking-launcher-updater\n";
+const appUpdateConfig = "\nowner: 'tifiouse-devs'\nrepo: 'VikingCraft-Launcher'\nprovider: github\nreleaseType: release\nupdaterCacheDirName: Viking-launcher-updater\n";
 
 
 class Index {
