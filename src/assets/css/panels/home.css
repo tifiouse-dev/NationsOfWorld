@@ -26,6 +26,14 @@
     text-align: center;
 }
 
+#particles {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    position: fixed;
+}
+
 .server-status-icon {
     height: 3.3rem;
 }
@@ -85,7 +93,7 @@
  *                                                                             *
  ******************************************************************************/
 
-.new-tab {
+ .new-tab {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +102,7 @@
 }
 
 .titre-tab-new {
-    margin-top: 1rem;
+    margin: 1rem 0 0;
     font-size: 2rem;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
@@ -111,7 +119,7 @@
 
 .news-block {
     width: 100%;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     border-radius: 10px;
     background: var(--background-transparent);
 }
@@ -137,16 +145,13 @@
 }
 
 .news-content .bbWrapper {
-    padding: 0 1.5rem;
-    padding-bottom: 1rem;
+    padding: 0 1.5rem 1rem;
     font-size: 1.2rem;
-
 }
 
 .news-content .bbWrapper p {
     font-weight: 100;
     margin: 0;
-
 }
 
 .news-content .bbWrapper .news-author {
@@ -158,6 +163,7 @@
 .news-content .bbWrapper .news-author span {
     font-weight: 700;
 }
+
 
 /*******************************************************************************
  *                                                                             *
@@ -184,8 +190,8 @@
 .social-block {
     display: flex;
     background: var(--background-transparent);
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     margin-bottom: 1rem;
     border-radius: 10px;
     font-size: 2rem;
@@ -251,6 +257,22 @@
     color: #d6860f; /* Rouge en format hexadécimal */
 }
 
+.play-instances {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: #d6860f;
+    color: #d6860f; /* Rouge en format hexadécimal */
+    position: relative;
+    height: 3.2rem;
+    padding-right: 1.9rem;
+}
+
+.play-instances .instances-select {
+    margin-right: -1rem; /* Ajustez la valeur en conséquence */
+}
+
+
 .play-instance {
     display: flex;
     justify-content: space-between;
@@ -258,32 +280,55 @@
     border-color: #d6860f;
     color: #d6860f; /* Rouge en format hexadécimal */
     position: relative;
-    border: solid 3px var(--element-color);
-    border-radius: 15px;
     height: 3.2rem;
     padding-right: 1.9rem;
 }
 
+/* Style du bouton discret */
+.discreet-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #d6860f; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: 2px solid #d6860f; /* Bordure du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s, color 0.3s; /* Transition fluide */
+
+    /* Style au survol */
+    &:hover {
+        background-color: white;
+        color: #d6860f;
+    }
+}
+
+
 .play-btn {
-    border: none;
+    border: rgba(96, 56, 19, 0);
     border-radius: 10px;
-    background: none;
+    background-color: rgba(96, 56, 19, 0); /* Fond transparent */
     font-size: 2rem;
     font-weight: bolder;
-    color: #d6860f; /* Rouge en format hexadécimal */
-    border-color: #d6860f;
-    padding: 0 1.5rem;
+    color: #d6860f; /* Texte en jaune ocre */
+    padding: 0;
     pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.play-btn img {
+    width: 65%; /* Pour assurer que l'image occupe tout l'espace du bouton */
+    height: auto;
 }
 
 .play-btn:hover {
-    transform: scale(1.1) !important; /* Augmente la taille de 10% au survol */
-    transition: transform 0.3s ease; /* Ajoute une transition fluide de 0.3 secondes */
-    color: #d6860f; /* Rouge en format hexadécimal */
-    border-color: #d6860f;
-    cursor: pointer; /* Change le curseur pour indiquer que le bouton est cliquable */
+    transform: scale(1.1) !important;
+    transition: transform 0.3s ease;
+    color: #d6860f;
+    cursor: pointer;
 }
-
 
 .instance-select {
     display: flex;
@@ -292,10 +337,9 @@
     right: -3;
     top: -2;
     color: #d6860f; /* Rouge en format hexadécimal */
-    border-color: #d6860f;
     font-size: 1rem;
     height: calc(100% - 1px);
-    border: solid 3px var(--element-color);
+    border: solid 3px rgb(212, 113, 19);
     text-align: center;
     border-radius: 15px;
     padding: 0 0.5rem;
@@ -306,6 +350,7 @@
     transform: rotate(270deg);
     pointer-events: none;
 }
+
 
 .info-starting-game {
     display: none;
