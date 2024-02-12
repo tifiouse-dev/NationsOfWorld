@@ -1,20 +1,20 @@
 {
-    "name": "VikingCraft-Launcher",
-    "preductname": "VikingCraft Launcher",
-    "version": "2.1.0",
-    "description": "Launcher Mincraft pour le serveur VikingCraft",
+    "name": "Starbyte-Studio-Launcher",
+    "preductname": "Starbyte-Studio Launcher",
+    "version": "2.2.0",
+    "description": "Launcher Mincraft pour le serveur Starbyte-Studio",
     "main": "src/app.js",
     "author": {
-        "name": "VikingCraft, Inc.",
-        "email": "contact@vikingcraft.fr",
+        "name": "Starbyte-Studio, Inc.",
+        "email": "contact@Starbyte-Studio.fr",
         "url": "https://github.com/"
     },
-    "url": "https://files-vikingcraftmc.athena-h.fr/",
+    "url": "https://plesk3427782743.files.starbyte-hosting.com",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=false --build=platform",
-        "icon": "node build.js --icon=https://github.com/tifiouse-devs/VikingCraft-Launcher/master/src/assets/images/icon.png"
+        "icon": "node build.js --icon=https://github.com/tifiouse-dev/Starbyte-Studio/master/src/assets/images/icon.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tifiouse-devs/VikingCraft-Launcher.git"
+        "url": "git+https://github.com/tifiouse-dev/Starbyte-Studio.git"
     }
 }

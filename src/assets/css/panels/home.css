@@ -244,7 +244,7 @@
 }
 
 .player-menu {
-    color: #d6860f; /* Rouge en format hexadécimal */
+    color: var(--element-color);
     transform: rotate(270deg);
     pointer-events: none;
 }
@@ -253,81 +253,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-color: #d6860f;
-    color: #d6860f; /* Rouge en format hexadécimal */
 }
-
-.play-instances {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-color: #d6860f;
-    color: #d6860f; /* Rouge en format hexadécimal */
-    position: relative;
-    height: 3.2rem;
-    padding-right: 1.9rem;
-}
-
-.play-instances .instances-select {
-    margin-right: -1rem; /* Ajustez la valeur en conséquence */
-}
-
 
 .play-instance {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-color: #d6860f;
-    color: #d6860f; /* Rouge en format hexadécimal */
     position: relative;
+    border: solid 3px #B83DBA;
+    border-radius: 15px;
     height: 3.2rem;
     padding-right: 1.9rem;
 }
 
-/* Style du bouton discret */
-.discreet-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #d6860f; /* Couleur de fond du bouton */
-    color: white; /* Couleur du texte */
-    border: 2px solid #d6860f; /* Bordure du bouton */
-    border-radius: 5px; /* Coins arrondis */
-    transition: background-color 0.3s, color 0.3s; /* Transition fluide */
-
-    /* Style au survol */
-    &:hover {
-        background-color: white;
-        color: #d6860f;
-    }
-}
-
-
 .play-btn {
-    border: rgba(96, 56, 19, 0);
+    border: none;
     border-radius: 10px;
-    background-color: rgba(96, 56, 19, 0); /* Fond transparent */
+    background: none;
+    color: var(--color);
     font-size: 2rem;
     font-weight: bolder;
-    color: #d6860f; /* Texte en jaune ocre */
-    padding: 0;
-    pointer-events: auto;
+    padding: 0 1.5rem;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s, color 0.3s;
 }
 
-.play-btn img {
-    width: 65%; /* Pour assurer que l'image occupe tout l'espace du bouton */
-    height: auto;
+.play-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%) scale(0);
 }
 
-.play-btn:hover {
-    transform: scale(1.1) !important;
-    transition: transform 0.3s ease;
-    color: #d6860f;
-    cursor: pointer;
+.play-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.play-btn.clicked::before {
+    transform: translate(-50%, -50%) scale(50);
+    opacity: 0;
+}
+
+.play-btn.clicked {
+    color: transparent;
 }
 
 .instance-select {
@@ -336,10 +313,10 @@
     position: absolute;
     right: -3;
     top: -2;
-    color: #d6860f; /* Rouge en format hexadécimal */
+    color: #B83DBA;
     font-size: 1rem;
     height: calc(100% - 1px);
-    border: solid 3px rgb(212, 113, 19);
+    border: solid 3px #B83DBA;
     text-align: center;
     border-radius: 15px;
     padding: 0 0.5rem;
@@ -350,7 +327,6 @@
     transform: rotate(270deg);
     pointer-events: none;
 }
-
 
 .info-starting-game {
     display: none;
@@ -364,13 +340,13 @@
 }
 
 .progress-bar::-webkit-progress-bar {
-    color: #d6860f; /* Rouge en format hexadécimal */
-    border: solid 1px var(--element-color);
+    color: #B83DBA; /* Rouge en format hexadécimal */
+    border: solid 1px #632264;
     border-radius: 10px;
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: var(--element-color);
+    background-color: #B83DBA;
     border-radius: 10px;
 }
 
@@ -378,8 +354,20 @@
     width: 3rem;
     height: 3rem;
     font-size: 3rem;
-    color: #d6860f; /* Rouge en format hexadécimal */
+    color: #B83DBA; /* Rouge en format hexadécimal */
     margin: 0 1.5rem;
+    cursor: pointer;
+    border: none; /* Supprime le style de bordure du bouton */
+    background: none; /* Supprime l'arrière-plan du bouton */
+    padding: 0; /* Supprime le rembourrage du bouton */
+}
+
+.settings-btn .icon {
+    transition: transform 0.3s; /* Ajoute la transition à l'icône */
+}
+
+.settings-btn:hover .icon {
+    transform: scale(1.2); /* Augmente la taille de l'icône au survol */
 }
 
 .instance-popup {
@@ -421,7 +409,7 @@
 }
 
 .instance-elements {
-    background: var(--background-element);
+    background: #7c2a7e;
     text-align: center;
     border-radius: 10px;
     margin: 0.5rem 0;
@@ -430,9 +418,29 @@
 }
 
 .instance-elements:hover {
-    background: var(--element-color);
+    background: #582058;
 }
 
 .active-instance {
-    background: var(--element-color);
+    background: #B83DBA;
+}
+
+/* Style du bouton discret */
+.discreet-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #B83DBA; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: 2px solid #B83DBA; /* Bordure du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s, color 0.3s; /* Transition fluide */
+
+    /* Style au survol */
+    &:hover {
+        background-color: white;
+        color: #B83DBA;
+    }
 }
