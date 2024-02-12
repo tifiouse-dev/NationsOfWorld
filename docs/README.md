@@ -15,7 +15,7 @@ Welcome to the Starbyte Studio Launcher, a multi-project launcher for Minecraft 
 3. 🚀 Once installed, launch the Starbyte Studio Launcher.
 4. 👤 Log in with your Starbyte Studio account or create a new one.
 5. 🔍 Browse and select the project you want to play.
-6. ▶️ Click "Play" to launch the selected project.
+6. ▶️ Click "Play" to launch the selected project !
 
 ## Updating
 The Starbyte Studio Launcher automatically checks for updates each time it is launched. If a new version is available, it will prompt you to update. Simply follow the on-screen instructions to update to the latest version.
