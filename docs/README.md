@@ -1,7 +1,7 @@
 # Starbyte Studio Launcher 🚀
 
 ## Overview
-Welcome to the Starbyte Studio Launcher, a multi-project launcher for Minecraft developed by Starbyte Studio. This launcher is designed to provide seamless access to various Minecraft projects developed by our studio.
+Welcome to the Nations Of Word Launcher, a multi-project launcher for Minecraft developed by Starbyte Studio. This launcher is designed to provide seamless access to various Minecraft projects developed by our studio.
 
 ## Features
 - **Multi-project Support:** Access multiple Minecraft projects developed by Starbyte Studio from a single launcher.
@@ -24,7 +24,7 @@ The Starbyte Studio Launcher automatically checks for updates each time it is la
 The launcher allows you to customize various settings to enhance your gaming experience. You can adjust graphics settings, control audio options, and more from the settings menu.
 
 ## Support
-For any inquiries or assistance regarding the Starbyte Studio Launcher, please contact our support team at support@starbyte-studio.com.
+For any inquiries or assistance regarding the Starbyte Studio Launcher, please contact our support team at support@NationsOfWord.com.
 
 ## Contributing
 We welcome contributions from the community to improve the Starbyte Studio Launcher. If you encounter any bugs or have suggestions for new features, please submit them through our GitHub repository.
@@ -36,7 +36,7 @@ The Starbyte Studio Launcher is licensed under the MIT License. See the LICENSE 
 We would like to thank the Minecraft community for their ongoing support and inspiration. Special thanks to our dedicated team at Starbyte Studio for their hard work in developing this launcher.
 
 ## Connect with Us
-- Website: [www.starbytestudio.com](https://www.starbyte-studio.com)
+- Website: [www.starbytestudio.com](https://www.NationsOfWord.com)
 - Twitter: [@StarbyteStudio](https://twitter.com/StarbyteStudio)
 - Facebook: [Starbyte Studio](https://www.facebook.com/StarbyteStudio)
 

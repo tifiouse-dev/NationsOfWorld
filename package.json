@@ -1,12 +1,12 @@
 {
-    "name": "Starbyte-Studio-Launcher",
-    "preductname": "Starbyte-Studio Launcher",
+    "name": "NationsOfWord-Launcher",
+    "preductname": "NationsOfWord Launcher",
     "version": "2.2.0",
-    "description": "Launcher Mincraft pour le serveur Starbyte-Studio",
+    "description": "Launcher Mincraft pour le serveur NationsOfWord",
     "main": "src/app.js",
     "author": {
-        "name": "Starbyte-Studio, Inc.",
-        "email": "contact@Starbyte-Studio.fr",
+        "name": "NationsOfWord, Inc.",
+        "email": "contact@NationsOfWord.fr",
         "url": "https://github.com/"
     },
     "url": "https://plesk3427782743.files.starbyte-hosting.com",
@@ -14,7 +14,7 @@
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
         "build": "node build.js --obf=false --build=platform",
-        "icon": "node build.js --icon=https://github.com/tifiouse-dev/Starbyte-Studio/master/src/assets/images/icon.png"
+        "icon": "node build.js --icon=https://github.com/tifiouse-dev/NationsOfWord/master/src/assets/images/icon.png"
     },
     "license": "CCANC",
     "nodemonConfig": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tifiouse-dev/Starbyte-Studio.git"
+        "url": "git+https://github.com/tifiouse-dev/NationsOfWord.git"
     }
 }
